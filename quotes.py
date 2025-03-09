@@ -26,7 +26,7 @@ quotes = [
     {"text": "It does not matter how slowly you go as long as you do not stop",
     "author": "Confucius"}
 
-    ] #quotes to generate
+    ] #quotes stored
 
 origins = ["*"]
 
@@ -37,12 +37,19 @@ app.add_middleware(
     allow_headers = ["*"],
 )
 
-@app.get("/api/quotes")
+@app.get("/api/quotes") # send all quotes
 async def get_quotes():
     data = {"data": {"quotes": quotes}}
     return JSONResponse(content=data, status_code=200)
 
-@app.get("/api/quotes/{quote_index}")
+@app.get("/api/quotes/text")
+async def get_individual_text():
+    for _ in range(len(quotes)):
+        for text in quotes[_].items():
+            data = {"data": {"authors quote": text}}
+            return JSONResponse(content=data, status_code=200)
+
+@app.get("/api/quotes/{quote_index}") # allows to get a specific quote from the quotes storage
 async def get_speific_quote(quote_index:int=Path(...)):
     quote_index = quote_index - 1
     if quote_index < 0 or quote_index >= len(quotes):
