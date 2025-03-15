@@ -1,6 +1,6 @@
 Quotes API Documentation
 
-Base URL: https://api-name.com/api
+Base URL: https://motivational-quotes-api-haah.onrender.com
 
 ENDPOINTS
 
