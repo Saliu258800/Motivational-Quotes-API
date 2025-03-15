@@ -1,0 +1,116 @@
+:root {
+/*---  colors	---*/
+	--custom-col-1: #ffffff;
+	--custom-col-2: #c370c3;
+	--custom-col-3: #e3e3d6;
+	--custom-col-4: #808080;
+}
+
+body {
+	margin: 0.5rem;
+	font-size: 14px;
+}
+
+/*---  header section ---*/
+
+body .header {
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	color: var(--custom-col-4);
+}
+
+.header h1 {
+	font-size: 24px;
+}
+
+.nav .nav-item {
+	text-decoration: none;
+	margin: 0.5rem;
+	color: var(--custom-col-4);
+	transition: color 0.5s ease;
+}
+
+.nav-item:hover {
+	color: var(--custom-col-2);
+}
+
+/*---  end header section  ---*/
+
+/*---  main section  ---*/
+
+.random-section {
+	margin-top: 10rem;
+	text-align: center;
+}
+
+.random-section #random-quotes {
+	background-color: var(--custom-col-3);
+	margin: 1rem auto;
+	height: 10rem;
+	width: 50%;
+	text-align: center;
+	padding-top: 3rem;
+	border: 3px solid var(--custom-col-2);
+	border-radius: 3px;
+}
+
+.random-section button.btn {
+	background-color: green;
+	outline: none;
+	box-shadow: none;
+	color: var(--custom-col-1);
+}
+
+.quotes {
+	margin: 3rem auto 1rem auto;
+	text-align: left;
+	width: fit-content;
+	background-color: var(--custom-col-2);
+	padding: 1rem;
+	border-radius: 5px;
+	height: 13rem;
+	overflow-y: scroll;
+}
+
+.quotes li {
+	margin: 1rem 0.5rem;
+	list-style: none;
+}
+
+.quotes span {
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.custom-div button.btn.btn-success {
+	margin: 0.5rem;
+	border-radius: 3px;
+}
+
+/*---  end main section  ---*/
+
+
+
+/*---  device configuration  ---*/
+
+@media screen and (max-width: 560px) {
+	body {
+		font-size: 12px;
+	}
+
+	.header h1 {
+		font-size: 18px;
+	}
+
+	.random-section #random-quotes {
+		height: 10rem;
+		width: 15rem;
+		padding: 1rem;
+		justify-content: center;
+	}
+
+	#random-quotes h4 {
+		font-size: 16px;
+	}
+}
